@@ -17,14 +17,15 @@
 */
 
 #include <stdint.h>
-#include <Arduino.h>
+#include "wiring_shift.h"
+#include "wiring_digital.h"
 #include "wiring_private.h"
 
 #ifdef __cplusplus
 extern "C"{
 #endif
 
-uint8_t shiftIn( pin_size_t ulDataPin, pin_size_t ulClockPin, BitOrder ulBitOrder )
+uint32_t shiftIn( uint32_t ulDataPin, uint32_t ulClockPin, uint32_t ulBitOrder )
 {
   uint8_t value = 0 ;
   uint8_t i ;
@@ -48,7 +49,7 @@ uint8_t shiftIn( pin_size_t ulDataPin, pin_size_t ulClockPin, BitOrder ulBitOrde
   return value ;
 }
 
-void shiftOut( pin_size_t ulDataPin, pin_size_t ulClockPin, BitOrder ulBitOrder, uint8_t ulVal )
+void shiftOut( uint32_t ulDataPin, uint32_t ulClockPin, uint32_t ulBitOrder, uint32_t ulVal )
 {
   uint8_t i ;
 

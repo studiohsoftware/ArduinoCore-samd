@@ -19,7 +19,6 @@
 #include <Arduino.h>
 #include <Reset.h> // Needed for auto-reset with 1200bps port touch
 #include "CDC.h"
-#include "USBAPI.h"
 #include "SAMD21_USBDevice.h"
 
 #include <stdlib.h>
@@ -38,9 +37,7 @@ extern USBDevice_SAMD21G18x usbd;
 
 #define CDC_LINESTATE_READY		(CDC_LINESTATE_RTS | CDC_LINESTATE_DTR)
 
-extern USBDeviceClass USBDevice;
-
-typedef struct {
+typedef struct __attribute__((packed)) {
 	uint32_t dwDTERate;
 	uint8_t bCharFormat;
 	uint8_t bParityType;

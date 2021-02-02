@@ -22,7 +22,7 @@
 /*
  * USB device definitions
  */
-#define STRING_PRODUCT "Arduino Nano 33 IoT"
+#define STRING_PRODUCT "Arduino NONA WLAN"
 #define USB_VID_HIGH   0x23
 #define USB_VID_LOW    0x41
 #define USB_PID_HIGH   0x00

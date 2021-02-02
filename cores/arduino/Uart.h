@@ -18,11 +18,11 @@
 
 #pragma once
 
-#include "api/HardwareSerial.h"
+#include "HardwareSerial.h"
 #include "SERCOM.h"
-#include "SafeRingBuffer.h"
+#include "RingBuffer.h"
 
-#define SERIAL_BUFFER_SIZE  64
+#include <cstddef>
 
 class Uart : public HardwareSerial
 {
@@ -46,8 +46,8 @@ class Uart : public HardwareSerial
 
   private:
     SERCOM *sercom;
-    SafeRingBuffer rxBuffer;
-    SafeRingBuffer txBuffer;
+    RingBuffer rxBuffer;
+    RingBuffer txBuffer;
 
     uint8_t uc_pinRX;
     uint8_t uc_pinTX;

@@ -192,31 +192,31 @@ size_t Uart::write(const uint8_t data)
 
 SercomNumberStopBit Uart::extractNbStopBit(uint16_t config)
 {
-  switch(config & SERIAL_STOP_BIT_MASK)
+  switch(config & HARDSER_STOP_BIT_MASK)
   {
-    case SERIAL_STOP_BIT_1:
+    case HARDSER_STOP_BIT_1:
     default:
       return SERCOM_STOP_BIT_1;
 
-    case SERIAL_STOP_BIT_2:
+    case HARDSER_STOP_BIT_2:
       return SERCOM_STOP_BITS_2;
   }
 }
 
 SercomUartCharSize Uart::extractCharSize(uint16_t config)
 {
-  switch(config & SERIAL_DATA_MASK)
+  switch(config & HARDSER_DATA_MASK)
   {
-    case SERIAL_DATA_5:
+    case HARDSER_DATA_5:
       return UART_CHAR_SIZE_5_BITS;
 
-    case SERIAL_DATA_6:
+    case HARDSER_DATA_6:
       return UART_CHAR_SIZE_6_BITS;
 
-    case SERIAL_DATA_7:
+    case HARDSER_DATA_7:
       return UART_CHAR_SIZE_7_BITS;
 
-    case SERIAL_DATA_8:
+    case HARDSER_DATA_8:
     default:
       return UART_CHAR_SIZE_8_BITS;
 
@@ -225,16 +225,16 @@ SercomUartCharSize Uart::extractCharSize(uint16_t config)
 
 SercomParityMode Uart::extractParity(uint16_t config)
 {
-  switch(config & SERIAL_PARITY_MASK)
+  switch(config & HARDSER_PARITY_MASK)
   {
-    case SERIAL_PARITY_NONE:
+    case HARDSER_PARITY_NONE:
     default:
       return SERCOM_NO_PARITY;
 
-    case SERIAL_PARITY_EVEN:
+    case HARDSER_PARITY_EVEN:
       return SERCOM_EVEN_PARITY;
 
-    case SERIAL_PARITY_ODD:
+    case HARDSER_PARITY_ODD:
       return SERCOM_ODD_PARITY;
   }
 }

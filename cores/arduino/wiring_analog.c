@@ -125,7 +125,7 @@ void analogReference(eAnalogReference mode)
   }
 }
 
-int analogRead(pin_size_t pin)
+uint32_t analogRead(uint32_t pin)
 {
   uint32_t valueRead = 0;
 
@@ -191,7 +191,7 @@ int analogRead(pin_size_t pin)
 // hardware support.  These are defined in the appropriate
 // pins_*.c file.  For the rest of the pins, we default
 // to digital output.
-void analogWrite(pin_size_t pin, int value)
+void analogWrite(uint32_t pin, uint32_t value)
 {
   PinDescription pinDesc = g_APinDescription[pin];
   uint32_t attr = pinDesc.ulPinAttribute;

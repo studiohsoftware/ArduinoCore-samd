@@ -1,3 +1,4 @@
-*.bz2
-
-bootloaders/*/build/
+/libraries/USB_Host_Library_SAMD-master.zip
+/libraries/OldUSBHost.zip
+/.gitignore
+/.gitignore
